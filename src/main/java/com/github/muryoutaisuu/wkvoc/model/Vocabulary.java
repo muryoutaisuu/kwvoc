@@ -1,5 +1,7 @@
 package com.github.muryoutaisuu.wkvoc.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Vocabulary {
 
     private final int id;
@@ -10,7 +12,13 @@ public class Vocabulary {
     private final String[] meanings;
     private final String[] readings;
 
-    public Vocabulary(int id, String url, int level, String documenturl, String characters, String[] meanings, String[] readings) {
+    public Vocabulary(@JsonProperty("id") int id,
+    @JsonProperty("url") String url,
+    @JsonProperty("level") int level,
+    @JsonProperty("documenturl") String documenturl,
+    @JsonProperty("characters") String characters,
+    @JsonProperty("meanings") String[] meanings,
+    @JsonProperty("readings") String[] readings) {
         this.id = id;
         this.url = url;
         this.level = level;
